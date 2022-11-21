@@ -1,0 +1,30 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // "aws": {
+      //   "credentials": "profile:TODO"
+      // },
+      "type": "aws-sam",
+      "request": "direct-invoke",
+      "name": "run lambda",
+      "invokeTarget": {
+        "target": "code",
+        "projectRoot": "${workspaceFolder:demo-lambda-go}",
+        "lambdaHandler": "main"
+      },
+      "lambda": {
+        "runtime": "go1.x",
+        "payload": {
+          "path": "${workspaceFolder:demo-lambda-go}/examples/api_gw_payload.json"
+        },
+        "environmentVariables": {
+          "FOO": "BAR"
+        }
+      }
+    },
+  ]
+}

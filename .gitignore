@@ -1,0 +1,6 @@
+# AWS credentials
+/aws_creds.env
+
+# compiled binary and deploy-package
+/demo
+/demo.zip
